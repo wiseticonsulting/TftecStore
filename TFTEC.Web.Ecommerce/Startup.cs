@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TFTEC.Web.Ecommerce.Context;
+using TFTEC.Web.Ecommerce.Repositories;
+using TFTEC.Web.Ecommerce.Repositories.Interfaces;
 
 namespace TFTEC.Web.Ecommerce;
 public class Startup
@@ -16,6 +18,9 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<IProdutoRepository, ProdutoRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddControllersWithViews();
     }
 
