@@ -10,9 +10,9 @@ namespace TFTEC.Web.Ecommerce.Controllers
     {
         private readonly IProdutoRepository _produtoRepository;
 
-        public HomeController(IProdutoRepository lancheRepository)
+        public HomeController(IProdutoRepository produtoRepository)
         {
-            _produtoRepository = lancheRepository;
+            _produtoRepository = produtoRepository;
         }
 
         public IActionResult Index()

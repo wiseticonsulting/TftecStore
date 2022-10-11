@@ -68,7 +68,7 @@ namespace TFTEC.Web.Ecommerce.Migrations
                     PedidoDetalheId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PedidoId = table.Column<int>(type: "int", nullable: false),
-                    LancheId = table.Column<int>(type: "int", nullable: false),
+                    //LancheId = table.Column<int>(type: "int", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
                     Preco = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ProdutoId = table.Column<int>(type: "int", nullable: true)

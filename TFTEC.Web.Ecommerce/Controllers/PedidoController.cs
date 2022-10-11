@@ -38,7 +38,7 @@ namespace TFTEC.Web.Ecommerce.Controllers
             //verifica se existem itens de pedido
             if (_carrinhoCompra.CarrinhoCompraItems.Count == 0)
             {
-                ModelState.AddModelError("", "Seu carrinho esta vazio, que tal incluir um lanche...");
+                ModelState.AddModelError("", "Seu carrinho esta vazio...");
             }
 
             //calcula o total de itens e o total do pedido
@@ -59,7 +59,7 @@ namespace TFTEC.Web.Ecommerce.Controllers
                 _pedidoRepository.CriarPedido(pedido);
 
                 //define mensagens ao cliente
-                ViewBag.CheckoutCompletoMensagem = "Obrigado pelo seu pedido :)";
+                ViewBag.CheckoutCompletoMensagem = "Agradecemos pelo seu pedido :)";
                 ViewBag.TotalPedido = _carrinhoCompra.GetCarrinhoCompraTotal();
 
                 //limpa o carrinho do cliente

@@ -33,13 +33,13 @@ namespace TFTEC.Web.Ecommerce.Controllers
                 categoriaAtual = categoria;
             }
 
-            var lanchesListViewModel = new ProdutoListViewModel
+            var produtoListViewModel = new ProdutoListViewModel
             {
                 Produtos = produtos,
                 CategoriaAtual = categoriaAtual
             };
 
-            return View(lanchesListViewModel);
+            return View(produtoListViewModel);
         }
 
         public IActionResult Details(int produtoId)

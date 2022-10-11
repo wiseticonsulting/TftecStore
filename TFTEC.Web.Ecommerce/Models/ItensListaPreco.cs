@@ -11,7 +11,7 @@ namespace TFTEC.Web.Ecommerce.Models
         [Key]
         public int ItensListaPrecoId { get; set; }
 
-        [Required(ErrorMessage = "Informe o preço do lanche")]
+        [Required(ErrorMessage = "Informe o preço do Produto")]
         [Display(Name = "Preço")]
         [Column(TypeName = "decimal(10,2)")]
         [Range(1, 999.99, ErrorMessage = "O preço deve estar entre 1 e 999,99")]

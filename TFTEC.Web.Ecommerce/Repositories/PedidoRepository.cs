@@ -29,7 +29,7 @@ namespace TFTEC.Web.Ecommerce.Repositories
                 var pedidoDetail = new PedidoDetalhe()
                 {
                     Quantidade = carrinhoItem.Quantidade,
-                    LancheId = carrinhoItem.Produto.ProdutoId,
+                    ProdutoId = carrinhoItem.Produto.ProdutoId,
                     PedidoId = pedido.PedidoId,
                     Preco = carrinhoItem.Produto.Preco
                 };
