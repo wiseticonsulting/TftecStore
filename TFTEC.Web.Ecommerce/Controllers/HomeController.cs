@@ -1,25 +1,39 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TFTEC.Web.Ecommerce.Models;
+using TFTEC.Web.Ecommerce.Repositories.Interfaces;
+using TFTEC.Web.Ecommerce.ViewModel;
 
 namespace TFTEC.Web.Ecommerce.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProdutoRepository _produtoRepository;
+
+        public HomeController(IProdutoRepository lancheRepository)
+        {
+            _produtoRepository = lancheRepository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                ProdutosEstoque = _produtoRepository.ProdutoEstoque
+            };
+
+            return View(homeViewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None,
+            NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id
+                ?? HttpContext.TraceIdentifier
+            });
         }
     }
 }

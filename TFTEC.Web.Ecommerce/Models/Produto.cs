@@ -30,6 +30,12 @@ namespace TFTEC.Web.Ecommerce.Models
         [StringLength(200, ErrorMessage = "O {0} deve ter no máximo {1} caracteres")]
         public string ImageUrl { get; set; }
 
+        [Required(ErrorMessage = "Informe o preço do lanche")]
+        [Display(Name = "Preço")]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, 999.99, ErrorMessage = "O preço deve estar entre 1 e 999,99")]
+        public decimal Preco { get; set; }
+
         [Display(Name = "Caminho Imagem Miniatura")]
         [StringLength(200, ErrorMessage = "O {0} deve ter no máximo {1} caracteres")]
         public string ImageThumbnailUrl { get; set; }

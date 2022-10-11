@@ -13,6 +13,6 @@ namespace TFTEC.Web.Ecommerce.Repositories
             _context = context;
         }
 
-        public IEnumerable<Categoria> Categorias => _context.Categoria;
+        public IEnumerable<Categoria> Categorias => _context.Categorias;
     }
 }

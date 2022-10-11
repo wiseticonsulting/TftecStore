@@ -1,89 +1,16 @@
-﻿@model IEnumerable<TFTEC.Web.Ecommerce.Models.Produto>
+﻿@model ProdutoListViewModel
 
-@{
-    ViewData["Title"] = "List";
-}
+<div>
+    <h2>@Model.CategoriaAtual</h2>
+</div>
 
 <h1>List</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeProduto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoCurta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoDetalhada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageThumbnailUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmEstoque)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tamanho)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeProduto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoCurta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageThumbnailUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmEstoque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tamanho)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        @foreach (var produto in Model.Produtos)
+        {
+            <partial name="_ProdutosResumo" for="@produto" />
+        }
+    </div>
+</div>
