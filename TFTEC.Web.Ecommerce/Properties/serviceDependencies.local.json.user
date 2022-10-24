@@ -11,6 +11,10 @@
     "secrets1": {
       "restored": true,
       "restoreTime": "2022-10-05T19:08:57.8683704Z"
+    },
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2022-10-11T03:37:06.0713444Z"
     }
   },
   "parameters": {
@@ -19,20 +23,30 @@
       "Type": "subscription",
       "Value": "e8742b73-9839-44f6-b2fe-5b28e3acfbcb"
     },
-    "secrets2.resourceGroupName": {
-      "Name": "secrets2.resourceGroupName",
-      "Type": "resourceGroup",
-      "Value": "rg-hml"
-    },
     "secrets2.subscriptionId": {
       "Name": "secrets2.subscriptionId",
       "Type": "subscription",
       "Value": "e8742b73-9839-44f6-b2fe-5b28e3acfbcb"
     },
+    "secrets2.resourceGroupName": {
+      "Name": "secrets2.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "rg-hml"
+    },
     "mssql1.resourceGroupName": {
       "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
       "Value": "rg-hml"
+    },
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "rg-hml"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "e8742b73-9839-44f6-b2fe-5b28e3acfbcb"
     }
   }
 }

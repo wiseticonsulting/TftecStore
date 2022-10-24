@@ -16,6 +16,13 @@
       "type": "secrets.keyVault",
       "connectionId": "VaultUri",
       "dynamicId": null
+    },
+    "storage1": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/tftecwebecommercestorage",
+      "type": "storage.azure",
+      "connectionId": "CloudStorage",
+      "dynamicId": null
     }
   }
 }

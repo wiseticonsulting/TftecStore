@@ -591,3 +591,9 @@ C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\obj\Debug\net6.0\refint\TFTEC.Web.
 C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\obj\Debug\net6.0\TFTEC.Web.Ecommerce.pdb
 C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\obj\Debug\net6.0\TFTEC.Web.Ecommerce.genruntimeconfig.cache
 C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\obj\Debug\net6.0\ref\TFTEC.Web.Ecommerce.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\Azure.Storage.Files.Shares.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\Azure.Storage.Queues.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\Microsoft.Extensions.Azure.dll
+C:\ProjetoTFTEC\Ecommerce\TFTEC.Web.Ecommerce\bin\Debug\net6.0\System.IO.Hashing.dll

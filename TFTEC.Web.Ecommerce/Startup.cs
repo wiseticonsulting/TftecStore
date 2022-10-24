@@ -6,6 +6,14 @@ using TFTEC.Web.Ecommerce.Models;
 using TFTEC.Web.Ecommerce.Repositories;
 using TFTEC.Web.Ecommerce.Repositories.Interfaces;
 using TFTEC.Web.Ecommerce.Services;
+using System;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Azure;
+using Azure.Storage.Queues;
+using Azure.Storage.Blobs;
+using Azure.Core.Extensions;
+using Microsoft.Extensions.Options;
+using System.Configuration;
 
 namespace TFTEC.Web.Ecommerce;
 public class Startup
@@ -22,6 +30,8 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddAzureClients(builder => builder.AddBlobServiceClient(Configuration.GetConnectionString("CloudStorage")));
 
         services.AddIdentity<IdentityUser, IdentityRole>()
              .AddEntityFrameworkStores<AppDbContext>()
