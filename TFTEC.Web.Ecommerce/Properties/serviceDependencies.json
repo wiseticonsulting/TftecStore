@@ -1,22 +1,3 @@
 {
-  "dependencies": {
-    "secrets1": {
-      "type": "secrets"
-    },
-    "mssql1": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:DefaultConnection",
-      "dynamicId": null
-    },
-    "secrets2": {
-      "type": "secrets",
-      "connectionId": "VaultUri",
-      "dynamicId": null
-    },
-    "storage1": {
-      "type": "storage",
-      "connectionId": "CloudStorage",
-      "dynamicId": null
-    }
-  }
+  "dependencies": {}
 }

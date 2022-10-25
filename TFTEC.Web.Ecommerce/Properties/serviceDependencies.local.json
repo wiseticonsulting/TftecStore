@@ -1,28 +1,3 @@
 {
-  "dependencies": {
-    "secrets1": {
-      "type": "secrets.user"
-    },
-    "mssql1": {
-      "secretStore": "LocalSecretsFile",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/tftec/databases/TFTEC_ECOMM_DB",
-      "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:DefaultConnection",
-      "dynamicId": null
-    },
-    "secrets2": {
-      "secretStore": null,
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/EcommerceKeyVaultTFTEC",
-      "type": "secrets.keyVault",
-      "connectionId": "VaultUri",
-      "dynamicId": null
-    },
-    "storage1": {
-      "secretStore": "LocalSecretsFile",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/tftecwebecommercestorage",
-      "type": "storage.azure",
-      "connectionId": "CloudStorage",
-      "dynamicId": null
-    }
-  }
+  "dependencies": {}
 }

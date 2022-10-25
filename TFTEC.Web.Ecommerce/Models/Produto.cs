@@ -43,8 +43,7 @@ namespace TFTEC.Web.Ecommerce.Models
         [Display(Name = "Estoque")]
         public bool EmEstoque { get; set; }
 
-        [Display(Name = "Tamanho")]
-        public int Tamanho { get; set; }
+        public TamanhoProdutoModel Tamanho { get; set; }
 
         [Display(Name = "Data de Criação")]
         public DateTime CreatedOn { get; set; }

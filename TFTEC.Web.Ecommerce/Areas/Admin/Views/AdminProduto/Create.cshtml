@@ -51,7 +51,9 @@
                     <label class="control-label">Tamanho</label>
                     <br />
                     <label class="form-check-label" style="padding-left: 20px">
-                        <input class="form-check-input" asp-for="Tamanho" /> @Html.DisplayNameFor(model => model.Tamanho)
+                        <select class="form-control" asp-for="Tamanho" asp-items="Html.GetEnumSelectList<TamanhoProdutoModel>()">
+                            @*<option value="0">Único</option>*@
+                        </select>
                     </label>
                 </div>
                 <div class="form-group col-md-4">

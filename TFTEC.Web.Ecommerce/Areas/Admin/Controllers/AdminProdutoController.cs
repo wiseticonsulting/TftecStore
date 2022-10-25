@@ -19,7 +19,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(string filter, int pageindex = 1, string sort ="Nome")
+        public async Task<IActionResult> Index(string filter, int pageindex = 1, string sort = "NomeProduto")
         {
             var resultado = _context.Produto.Include(l => l.Categoria).AsQueryable();
 
@@ -28,7 +28,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
                 resultado = resultado.Where(p => p.NomeProduto.Contains(filter));
             }
 
-            var model = await PagingList.CreateAsync(resultado, 5, pageindex, sort, "Nome");
+            var model = await PagingList.CreateAsync(resultado, 5, pageindex, sort, "NomeProduto");
             model.RouteValue = new RouteValueDictionary { { "filter", filter } };
             return View(model);
 
@@ -65,7 +65,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProdutoId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Create([Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProdutoId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
         {
             if (id != produto.ProdutoId)
             {
@@ -115,7 +115,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!LancheExists(produto.ProdutoId))
+                    if (!ProdutoExists(produto.ProdutoId))
                     {
                         return NotFound();
                     }
@@ -160,7 +160,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool LancheExists(int id)
+        private bool ProdutoExists(int id)
         {
             return _context.Produto.Any(e => e.ProdutoId == id);
         }

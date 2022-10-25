@@ -14,6 +14,7 @@ using Azure.Storage.Blobs;
 using Azure.Core.Extensions;
 using Microsoft.Extensions.Options;
 using System.Configuration;
+using TFTEC.Web.Ecommerce.Areas.Admin.Servicos;
 
 namespace TFTEC.Web.Ecommerce;
 public class Startup
@@ -31,8 +32,6 @@ public class Startup
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-        services.AddAzureClients(builder => builder.AddBlobServiceClient(Configuration.GetConnectionString("CloudStorage")));
-
         services.AddIdentity<IdentityUser, IdentityRole>()
              .AddEntityFrameworkStores<AppDbContext>()
              .AddDefaultTokenProviders();
@@ -41,8 +40,8 @@ public class Startup
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
-        //services.AddScoped<RelatorioVendasService>();
-        //services.AddScoped<GraficoVendasService>();
+        services.AddScoped<RelatorioVendasService>();
+        services.AddScoped<GraficoVendasService>();
 
         services.AddAuthorization(options =>
         {
