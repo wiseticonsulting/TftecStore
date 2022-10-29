@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+t2FSSrXtbJmIlKweT63wIt4R8xaceJWvBXR7/T2/RM=",
+  "Hash": "T+qbTSbF/c0XLGcInIEPHKkKcpI9sDtNFFzsglx8PGE=",
   "Source": "TFTEC.Web.Ecommerce",
   "BasePath": "_content/TFTEC.Web.Ecommerce",
   "Mode": "Default",
@@ -389,6 +389,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\produtos\\logo_tipo_copa.png"
+    },
+    {
+      "Identity": "C:\\ProjetoTFTEC\\Ecommerce\\TFTEC.Web.Ecommerce\\wwwroot\\Images\\upload2.png",
+      "SourceId": "TFTEC.Web.Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ProjetoTFTEC\\Ecommerce\\TFTEC.Web.Ecommerce\\wwwroot\\",
+      "BasePath": "_content/TFTEC.Web.Ecommerce",
+      "RelativePath": "Images/upload2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\upload2.png"
+    },
+    {
+      "Identity": "C:\\ProjetoTFTEC\\Ecommerce\\TFTEC.Web.Ecommerce\\wwwroot\\Images\\visualizar1.jpg",
+      "SourceId": "TFTEC.Web.Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ProjetoTFTEC\\Ecommerce\\TFTEC.Web.Ecommerce\\wwwroot\\",
+      "BasePath": "_content/TFTEC.Web.Ecommerce",
+      "RelativePath": "Images/visualizar1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\visualizar1.jpg"
     },
     {
       "Identity": "C:\\ProjetoTFTEC\\Ecommerce\\TFTEC.Web.Ecommerce\\wwwroot\\js\\site.js",

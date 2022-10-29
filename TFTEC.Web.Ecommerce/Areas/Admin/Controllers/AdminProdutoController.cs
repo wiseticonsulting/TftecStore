@@ -149,13 +149,19 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
             return View(produto);
         }
 
-        // POST: Admin/AdminLanches/Delete/5
+        // POST: Admin/AdminProdutos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var lanche = await _context.Produto.FindAsync(id);
-            _context.Produto.Remove(lanche);
+            var produto = await _context.Produto.FindAsync(id);
+
+            var carrinhoItens = _context.CarrinhoCompraItens
+                                 .Where(carrinho => carrinho.Produto.ProdutoId == id);
+
+            _context.CarrinhoCompraItens.RemoveRange(carrinhoItens);
+            _context.Produto.Remove(produto);
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
