@@ -65,7 +65,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Create([Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImageUrl,ImageThumbnailUrl,Tamanho,EmEstoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace TFTEC.Web.Ecommerce.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,Tamanho,Estoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("ProdutoId,NomeProduto,DescricaoCurta,DescricaoDetalhada,Preco,ImageUrl,ImageThumbnailUrl,Tamanho,EmEstoque,CreatedOn,ModifiedOn,CategoriaId")] Produto produto)
         {
             if (id != produto.ProdutoId)
             {

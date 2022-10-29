@@ -71,6 +71,25 @@ namespace TFTEC.Web.Ecommerce.Services
                     _userManager.AddToRoleAsync(user, "Admin").Wait();
                 }
             }
+
+            if (_userManager.FindByEmailAsync("admin@tftec.com.br").Result == null)
+            {
+                IdentityUser user = new IdentityUser();
+                user.UserName = "admin@tftec";
+                user.Email = "admin@tftec";
+                user.NormalizedUserName = "ADMIN@TFTEC";
+                user.NormalizedEmail = "ADMIN@TFTEC";
+                user.EmailConfirmed = true;
+                user.LockoutEnabled = false;
+                user.SecurityStamp = Guid.NewGuid().ToString();
+
+                IdentityResult result = _userManager.CreateAsync(user, "Copa#2022").Result;
+
+                if (result.Succeeded)
+                {
+                    _userManager.AddToRoleAsync(user, "Admin").Wait();
+                }
+            }
         }
     }
 }

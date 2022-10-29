@@ -1,34 +1,21 @@
-﻿
+﻿@model FileManagerModel
 @{
     ViewBag.Title = "Arquivos";
 }
-@if (Model != null)
+@if (Model.Files != null)
 {
     <h3>Imagens:</h3>
     <hr />
-    //var caminho = Model.PathImagesProduto;
+    var caminho = Model.PathImagesProduto;
     <div class="row">
-        @*@foreach (FileInfo file in Model.Files)
-    {
-    <div class="col">
-    <img src="~/@caminho/@file.Name" width="125" height="125" title="@file.Name" asp-append-version="true">
-    <div style="padding:10px;text-align:left">
-    <a href="@Url.Action("Deletefile","AdminImagens",new { fname=file.Name})">Deletar</a>
-    </div>
-    </div>
-    }*@
-
-        @foreach (var item in Model)
+        @foreach (FileInfo file in Model.Files)
         {
-            <div class="imageBlock">
-                <a href="@item" target="_blank"><img class="thumb" src="@item" alt="images" /></a><br />
-                <div class="deleteDiv"><img class="deleteIcon" src="~/Images/deleteImage.png" title="Delete Image" onclick="deleteImage('@item');" /></div>
+            <div class="col">
+                <img src="~/@caminho/@file.Name" width="125" height="125" title="@file.Name" asp-append-version="true">
+                <div style="padding:10px;text-align:left">
+                    <a href="@Url.Action("Deletefile","AdminImagens",new { fname=file.Name})">Deletar</a>
+                </div>
             </div>
-        }
-
-        @using (Html.BeginForm("DeleteAll", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div class="fileUpload btn btn-default"><span>Delete All Files</span><input type="submit" name="deleteAll" class="upload" /></div>
         }
     </div>
 }

@@ -16,7 +16,7 @@ namespace TFTEC.Web.Ecommerce.Repositories
         public IEnumerable<Produto> Produtos => _context.Produto.Include(c => c.Categoria);
 
         public IEnumerable<Produto> ProdutoEstoque => _context.Produto.
-                                   Where(l => l.EmEstoque)
+                                   Where(l => l.EmEstoque == true)
                                   .Include(c => c.Categoria);
 
         public Produto GetProdutoById(int produtoId)
